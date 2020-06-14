@@ -1,16 +1,17 @@
+import { ReactConnectorModule } from 'ngx-react-connector';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 
 @NgModule({
-	declarations: [
-		AppComponent
-	],
+	declarations: [AppComponent],
 	imports: [
-		BrowserModule
+		BrowserModule,
+		FormsModule,
+		ReactConnectorModule
 	],
-	providers: [],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

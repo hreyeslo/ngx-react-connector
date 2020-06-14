@@ -1,11 +1,14 @@
 {
 	"name": "ngx-react-connector",
-	"version": "0.0.1",
+	"version": "1.0.0",
 	"peerDependencies": {
 		"@angular/common": "^9.1.11",
 		"@angular/core": "^9.1.11"
 	},
 	"dependencies": {
-		"tslib": "^1.10.0"
+		"tslib": "^1.10.0",
+		"lodash": "^4.17.15",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1"
 	}
 }
