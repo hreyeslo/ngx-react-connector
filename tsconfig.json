@@ -1,23 +1,31 @@
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "importHelpers": true,
-    "target": "es2015",
-    "lib": [
-      "es2018",
-      "dom"
-    ]
-  },
-  "angularCompilerOptions": {
-    "fullTemplateTypeCheck": true,
-    "strictInjectionParameters": true
-  }
+	"compileOnSave": false,
+	"compilerOptions": {
+		"baseUrl": "./",
+		"outDir": "./dist/out-tsc",
+		"sourceMap": true,
+		"declaration": false,
+		"downlevelIteration": true,
+		"experimentalDecorators": true,
+		"module": "esnext",
+		"moduleResolution": "node",
+		"importHelpers": true,
+		"target": "es2015",
+		"jsx": "react",
+		"allowSyntheticDefaultImports": true,
+		"lib": [
+			"es2018",
+			"dom"
+		],
+		"paths": {
+			"ngx-react-connector": [
+				"dist/ngx-react-connector/ngx-react-connector",
+				"dist/ngx-react-connector"
+			]
+		}
+	},
+	"angularCompilerOptions": {
+		"fullTemplateTypeCheck": true,
+		"strictInjectionParameters": true
+	}
 }
