@@ -1,24 +1,61 @@
 # NgxReactConnector
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.11.
+This library was generated for Angular 9+ apps.
 
-## Code scaffolding
+This library is a connector that allows React components to be used in Angular applications easily.
 
-Run `ng generate component component-name --project ngx-react-connector` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-react-connector`.
-> Note: Don't forget to add `--project ngx-react-connector` or else it will be added to the default project in your `angular.json` file. 
+## Demo
 
-## Build
+[Stackblitz](https://stackblitz.com/edit/ngx-react-connector)
 
-Run `ng build ngx-react-connector` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation instructions
+Install `ngx-react-connector` from `npm`:
+```bash
+npm install ngx-react-connector
 
-## Publishing
+or
 
-After building your library with `ng build ngx-react-connector`, go to the dist folder `cd dist/ngx-react-connector` and run `npm publish`.
+yarn add ngx-react-connector
+```
 
-## Running unit tests
+Add needed package to NgModule imports:
+```
+import { ReactConnectorModule } from 'ngx-react-connector';
 
-Run `ng test ngx-react-connector` to execute the unit tests via [Karma](https://karma-runner.github.io).
+@NgModule({
+  ...
+  imports: [ReactConnectorModule,...]
+  ...
+})
+```
 
-## Further help
+## How to use
+Use the directive in your template
+```
+<ng-container
+    [reactConnectorComponent]="reactComponent"
+    [reactProps]="reactProps"
+    [reactEvents]="reactEvents"
+    [reactClassContainer]="reactClassContainer">
+</ng-container>
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+You can see this variables in the [Stackblitz](https://stackblitz.com/edit/ngx-react-connector) example.
+
+## Extra elements
+This module contains a service to easily update the properties. You can use like this:
+```
+import { ReactConnectorService } from 'ngx-react-connector';
+
+export class AppComponent {
+    ...
+    reactProps = {text: 'Sample button'};
+
+    constructor(private _rcService: ReactConnectorService) {}
+
+    updateText(text: string) {
+        this.reactProps = this._rcService.updateProps(this.reactProps, {text});
+    }
+    ...
+}
+```
